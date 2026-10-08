@@ -1,0 +1,9 @@
+{
+  "api": {
+    "serverRunning": "साड़ी API सर्वर चल रहा है।",
+    "sareeNotFound": "साड़ी नहीं मिली",
+    "orderPlaced": "ऑर्डर सफलतापूर्वक दर्ज किया गया!",
+    "routeNotFound": "रूट नहीं मिला",
+    "internalServerError": "सर्वर में आंतरिक त्रुटि"
+  }
+}

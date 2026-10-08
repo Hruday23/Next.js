@@ -1,0 +1,9 @@
+{
+  "api": {
+    "serverRunning": "Saree API server is running.",
+    "sareeNotFound": "Saree not found",
+    "orderPlaced": "Order placed successfully!",
+    "routeNotFound": "Route not found",
+    "internalServerError": "Internal server error"
+  }
+}

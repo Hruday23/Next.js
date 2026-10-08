@@ -1,0 +1,9 @@
+{
+  "api": {
+    "serverRunning": "చీరల API సర్వర్ పనిచేస్తోంది.",
+    "sareeNotFound": "చీర కనుగొనబడలేదు",
+    "orderPlaced": "ఆర్డర్ విజయవంతంగా నమోదు చేయబడింది!",
+    "routeNotFound": "రూట్ కనుగొనబడలేదు",
+    "internalServerError": "సర్వర్‌లో అంతర్గత లోపం"
+  }
+}

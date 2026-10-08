@@ -1,0 +1,69 @@
+{
+  "brandName": "Bharathi Prints",
+  "metadata": {
+    "title": "Bharathi Prints",
+    "description": "Shop Bharathi Prints collections."
+  },
+  "header": {
+    "navigationLabel": "Main navigation",
+    "searchLabel": "Search products",
+    "cartLabel": "Cart",
+    "navLinks": [
+      { "label": "Shop", "href": "/" },
+      { "label": "Collections", "href": "/" },
+      { "label": "About", "href": "/" }
+    ]
+  },
+  "footer": {
+    "description": "Thoughtfully crafted prints and designs for your everyday style.",
+    "copyright": "All rights reserved.",
+    "columns": [
+      {
+        "title": "Shop",
+        "links": [
+          { "label": "New Arrivals", "href": "/new-arrivals" },
+          { "label": "Best Sellers", "href": "/best-sellers" },
+          { "label": "Accessories", "href": "/accessories" }
+        ]
+      },
+      {
+        "title": "About",
+        "links": [
+          { "label": "Our Story", "href": "/about" },
+          { "label": "Journal", "href": "/journal" },
+          { "label": "Sustainability", "href": "/sustainability" }
+        ]
+      },
+      {
+        "title": "Customer Care",
+        "links": [
+          { "label": "Shipping", "href": "/shipping" },
+          { "label": "Returns", "href": "/returns" },
+          { "label": "Support", "href": "/support" }
+        ]
+      }
+    ],
+    "legalLinks": [
+      { "label": "Privacy", "href": "/privacy-policy" },
+      { "label": "Terms", "href": "/terms" }
+    ]
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is currently empty."
+  },
+  "home": {
+    "nextLogoAlt": "Next.js logo",
+    "titleBefore": "To get started, edit the",
+    "titleCode": "page.tsx",
+    "titleAfter": "file.",
+    "introBefore": "Looking for a starting point or more instructions? Head over to",
+    "templates": "Templates",
+    "introMiddle": "or the",
+    "learning": "Learning",
+    "introAfter": "center.",
+    "vercelLogoAlt": "Vercel logomark",
+    "deployNow": "Deploy Now",
+    "documentation": "Documentation"
+  }
+}

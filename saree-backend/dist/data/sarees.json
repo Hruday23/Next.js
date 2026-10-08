@@ -1,0 +1,46 @@
+[
+    {
+        "id": "1",
+        "price": 2499,
+        "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c",
+        "translations": {
+            "en": {
+                "name": "Kalamkari Hand-Block Printed Cotton Saree",
+                "category": "Cotton",
+                "description": "Exquisite hand-block printed cotton saree with traditional motifs."
+            },
+            "te": {
+                "name": "కలంకారి హ్యాండ్-బ్లాక్ ప్రింటెడ్ కాటన్ చీర",
+                "category": "కాటన్",
+                "description": "సాంప్రదాయ మోటిఫ్‌లతో అందంగా రూపొందించిన హ్యాండ్-బ్లాక్ ప్రింటెడ్ కాటన్ చీర."
+            },
+            "hi": {
+                "name": "कलमकारी हैंड-ब्लॉक प्रिंटेड कॉटन साड़ी",
+                "category": "कॉटन",
+                "description": "पारंपरिक आकृतियों वाली सुंदर हैंड-ब्लॉक प्रिंटेड कॉटन साड़ी।"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "price": 1899,
+        "image": "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b",
+        "translations": {
+            "en": {
+                "name": "Indigo Block Print Pure Cotton Saree",
+                "category": "Indigo",
+                "description": "Breathable daily-wear cotton saree featuring geometric block prints."
+            },
+            "te": {
+                "name": "ఇండిగో బ్లాక్ ప్రింట్ ప్యూర్ కాటన్ చీర",
+                "category": "ఇండిగో",
+                "description": "జ్యామితీయ బ్లాక్ ప్రింట్లతో రోజువారీ ధరించడానికి అనువైన గాలి ప్రసరించే కాటన్ చీర."
+            },
+            "hi": {
+                "name": "इंडिगो ब्लॉक प्रिंट प्योर कॉटन साड़ी",
+                "category": "इंडिगो",
+                "description": "ज्यामितीय ब्लॉक प्रिंट वाली रोज़ाना पहनने के लिए आरामदायक कॉटन साड़ी।"
+            }
+        }
+    }
+]
