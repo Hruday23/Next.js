@@ -8,6 +8,10 @@ function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
 }
 
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
 export default async function CartPage({ params }: PageProps<"/[lang]/cart">) {
   const { lang } = await params;
   if (!isLocale(lang)) notFound();

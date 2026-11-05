@@ -75,7 +75,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           <Header
             brandName={messages.brandName}
             brandHref={localePath(locale, "/")}
-            brandLogoSrc="/Logo.jpeg"
+            brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
             cartHref={localePath(locale, "/cart")}
             linkComponent={Link}
             navLinks={navLinks}
@@ -87,7 +87,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           <Footer
             brandName={messages.brandName}
             brandHref={localePath(locale, "/")}
-            brandLogoSrc="/Logo.jpeg"
+            brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
             description={messages.footer.description}
             columns={footerColumns}
             copyright={messages.footer.copyright}

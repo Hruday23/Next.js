@@ -4,6 +4,10 @@ import SareeCard, { type SareeCardProduct } from "../../../components/saree-card
 const locales = ["en", "te", "hi"] as const;
 type Locale = (typeof locales)[number];
 
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
+
 interface SareesApiResponse {
   success: boolean;
   count: number;
@@ -17,7 +21,7 @@ function isLocale(value: string): value is Locale {
 async function getSarees(locale: Locale): Promise<SareeCardProduct[]> {
   const apiBaseUrl = (process.env.SAREE_API_URL ?? "http://localhost:5000").replace(/\/$/, "");
   const response = await fetch(`${apiBaseUrl}/api/sarees?lang=${locale}`, {
-    cache: "no-store",
+    cache: "force-cache",
   });
 
   if (!response.ok) {
