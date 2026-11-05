@@ -9,7 +9,7 @@
     "searchLabel": "उत्पाद खोजें",
     "cartLabel": "कार्ट",
     "navLinks": [
-      { "label": "शॉप", "href": "/" },
+      { "label": "शॉप", "href": "/shop" },
       { "label": "कलेक्शन", "href": "/" },
       { "label": "हमारे बारे में", "href": "/" }
     ]
@@ -50,7 +50,17 @@
   },
   "cart": {
     "title": "आपकी कार्ट",
-    "empty": "आपकी कार्ट अभी खाली है।"
+    "empty": "आपकी कार्ट अभी खाली है।",
+    "remove": "हटाएँ",
+    "continueShopping": "खरीदारी जारी रखें",
+    "total": "कुल",
+    "orderOnWhatsApp": "सभी आइटम WhatsApp पर ऑर्डर करें"
+  },
+  "shop": {
+    "title": "साड़ी कलेक्शन",
+    "empty": "अभी कोई साड़ी उपलब्ध नहीं है।",
+    "addToCart": "कार्ट में जोड़ें",
+    "buyNow": "अभी खरीदें"
   },
   "home": {
     "nextLogoAlt": "Next.js लोगो",

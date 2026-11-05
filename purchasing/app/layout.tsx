@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, Header } from "../../reusable-components/src";
+import { CartProvider } from "../components/cart-provider";
 import type en from "../messages/en.json";
 import "./globals.css";
 
@@ -70,28 +71,30 @@ export default async function RootLayout({ children, params }: LayoutProps) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header
-          brandName={messages.brandName}
-          brandHref={localePath(locale, "/")}
-          brandLogoSrc="/Logo.jpeg"
-          cartHref={localePath(locale, "/cart")}
-          linkComponent={Link}
-          navLinks={navLinks}
-          navigationLabel={messages.header.navigationLabel}
-          searchLabel={messages.header.searchLabel}
-          cartLabel={messages.header.cartLabel}
-        />
-        {children}
-        <Footer
-          brandName={messages.brandName}
-          brandHref={localePath(locale, "/")}
-          brandLogoSrc="/Logo.jpeg"
-          description={messages.footer.description}
-          columns={footerColumns}
-          copyright={messages.footer.copyright}
-          legalLinks={legalLinks}
-          linkComponent={Link}
-        />
+        <CartProvider>
+          <Header
+            brandName={messages.brandName}
+            brandHref={localePath(locale, "/")}
+            brandLogoSrc="/Logo.jpeg"
+            cartHref={localePath(locale, "/cart")}
+            linkComponent={Link}
+            navLinks={navLinks}
+            navigationLabel={messages.header.navigationLabel}
+            searchLabel={messages.header.searchLabel}
+            cartLabel={messages.header.cartLabel}
+          />
+          {children}
+          <Footer
+            brandName={messages.brandName}
+            brandHref={localePath(locale, "/")}
+            brandLogoSrc="/Logo.jpeg"
+            description={messages.footer.description}
+            columns={footerColumns}
+            copyright={messages.footer.copyright}
+            legalLinks={legalLinks}
+            linkComponent={Link}
+          />
+        </CartProvider>
       </body>
     </html>
   );

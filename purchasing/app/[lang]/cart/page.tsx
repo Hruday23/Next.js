@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import CartContent from "../../../components/cart-content";
 
 const locales = ["en", "te", "hi"] as const;
 type Locale = (typeof locales)[number];
@@ -15,7 +16,17 @@ export default async function CartPage({ params }: PageProps<"/[lang]/cart">) {
   return (
     <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-12">
       <h1 className="text-3xl font-semibold text-zinc-950">{messages.title}</h1>
-      <p className="mt-3 text-zinc-600">{messages.empty}</p>
+      <CartContent
+        locale={lang}
+        labels={{
+          empty: messages.empty,
+          remove: messages.remove,
+          continueShopping: messages.continueShopping,
+          total: messages.total,
+          orderOnWhatsApp: messages.orderOnWhatsApp,
+        }}
+        shopHref={`/${lang}/shop`}
+      />
     </main>
   );
 }

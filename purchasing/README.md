@@ -2,21 +2,28 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+From the repository root, start the unified shop and cart app:
 
 ```bash
+cd purchasing
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the localized shop and cart routes in the same app:
+
+- Shop: `http://localhost:3000/en/shop`, `http://localhost:3000/te/shop`, or `http://localhost:3000/hi/shop`
+- Cart: `http://localhost:3000/en/cart`, `http://localhost:3000/te/cart`, or `http://localhost:3000/hi/cart`
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+## Shop and cart routes
+
+The shop and cart share this Next.js app and one dev server:
+
+- `/en/shop`, `/te/shop`, `/hi/shop`
+- `/en/cart`, `/te/cart`, `/hi/cart`
+
+The shop loads its products from the Express backend. Start the backend from `saree-backend` with `npm run dev`; it listens on port `5000` by default. To use a different backend address, set `SAREE_API_URL`, for example `http://localhost:5000`.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

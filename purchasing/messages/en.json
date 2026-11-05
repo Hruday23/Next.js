@@ -9,7 +9,7 @@
     "searchLabel": "Search products",
     "cartLabel": "Cart",
     "navLinks": [
-      { "label": "Shop", "href": "/" },
+      { "label": "Shop", "href": "/shop" },
       { "label": "Collections", "href": "/" },
       { "label": "About", "href": "/" }
     ]
@@ -50,7 +50,17 @@
   },
   "cart": {
     "title": "Your cart",
-    "empty": "Your cart is currently empty."
+    "empty": "Your cart is currently empty.",
+    "remove": "Remove",
+    "continueShopping": "Continue shopping",
+    "total": "Total",
+    "orderOnWhatsApp": "Order all items on WhatsApp"
+  },
+  "shop": {
+    "title": "Saree collection",
+    "empty": "No sarees are available right now.",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now"
   },
   "home": {
     "nextLogoAlt": "Next.js logo",
