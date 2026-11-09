@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@source "../../reusable-components/src";
+@source "../node_modules/@hruday23/reusable/dist";
 
 :root {
   --background: #ffffff;

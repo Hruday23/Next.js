@@ -1,29 +1,16 @@
 import cors from "cors";
+import type { Locale, SareeRecord } from "@hruday23/reusable";
 import express, { type ErrorRequestHandler, type Request, type Response } from "express";
 import sareesData from "./data/sarees.json";
 import enMessages from "./messages/en.json";
 import hiMessages from "./messages/hi.json";
 import teMessages from "./messages/te.json";
 
-const locales = ["en", "te", "hi"] as const;
-type Locale = (typeof locales)[number];
+const locales: readonly Locale[] = ["en", "te", "hi"];
 const messages = { en: enMessages, te: teMessages, hi: hiMessages };
 
 function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);
-}
-
-interface SareeTranslation {
-  name: string;
-  category: string;
-  description: string;
-}
-
-interface SareeRecord {
-  id: string;
-  price: number;
-  image: string;
-  translations: Record<Locale, SareeTranslation>;
 }
 
 const app = express();

@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Footer, Header } from "../../reusable-components/src";
+import { Footer, Header, type Locale } from "@hruday23/reusable";
 import { CartProvider } from "../components/cart-provider";
 import type en from "../messages/en.json";
 import "./globals.css";
 
-const locales = ["en", "te", "hi"] as const;
-type Locale = (typeof locales)[number];
+const locales = ["en", "te", "hi"] as const satisfies readonly Locale[];
 
 function isLocale(value: string): value is Locale {
   return locales.includes(value as Locale);

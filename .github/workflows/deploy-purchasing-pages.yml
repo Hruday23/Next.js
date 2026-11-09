@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: read
+  packages: read
   pages: write
   id-token: write
 
@@ -30,6 +31,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          registry-url: "https://npm.pkg.github.com/"
+          scope: "@hruday23"
           cache: npm
           cache-dependency-path: purchasing/package-lock.json
 
@@ -48,6 +51,8 @@ jobs:
       - name: Install dependencies
         working-directory: purchasing
         run: npm ci
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build static site
         working-directory: purchasing
