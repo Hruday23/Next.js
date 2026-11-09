@@ -19,21 +19,35 @@ function isLocale(value: string): value is Locale {
 }
 
 async function getSarees(locale: Locale): Promise<SareeCardProduct[]> {
-  const apiBaseUrl = (process.env.SAREE_API_URL ?? "http://localhost:5000").replace(/\/$/, "");
-  const response = await fetch(`${apiBaseUrl}/api/sarees?lang=${locale}`, {
-    cache: "force-cache",
-  });
-
-  if (!response.ok) {
-    throw new Error(`Could not load sarees: backend returned HTTP ${response.status}`);
+  const configuredApiUrl = process.env.NEXT_PUBLIC_API_URL;
+  if (!configuredApiUrl) {
+    console.warn("Could not load sarees: NEXT_PUBLIC_API_URL is not configured");
+    return [];
   }
 
-  const result: SareesApiResponse = await response.json();
-  if (!result.success || !Array.isArray(result.data)) {
-    throw new Error("Could not load sarees: backend returned an invalid catalog response");
-  }
+  const apiBaseUrl = configuredApiUrl.replace(/\/$/, "");
 
-  return result.data;
+  try {
+    const response = await fetch(`${apiBaseUrl}/api/sarees?lang=${locale}`, {
+      cache: "force-cache",
+    });
+
+    if (!response.ok) {
+      console.warn(`Could not load sarees: backend returned HTTP ${response.status}`);
+      return [];
+    }
+
+    const result: SareesApiResponse = await response.json();
+    if (!result.success || !Array.isArray(result.data)) {
+      console.warn("Could not load sarees: backend returned an invalid catalog response");
+      return [];
+    }
+
+    return result.data;
+  } catch (error) {
+    console.warn("Could not load sarees: backend request failed", error);
+    return [];
+  }
 }
 
 export default async function ShopPage({
