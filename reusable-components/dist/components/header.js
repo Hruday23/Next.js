@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Header;
+const jsx_runtime_1 = require("react/jsx-runtime");
+function DefaultLink({ href, className, children }) {
+    return ((0, jsx_runtime_1.jsx)("a", { className: className, href: href, children: children }));
+}
+function Header({ brandName, brandHref, brandLogoSrc, navLinks, navigationLabel, searchLabel, cartLabel, cartCount = 0, cartHref, linkComponent: Link = DefaultLink, }) {
+    return ((0, jsx_runtime_1.jsx)("header", { className: "border-b border-zinc-200 bg-white", children: (0, jsx_runtime_1.jsxs)("div", { className: "mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4", children: [(0, jsx_runtime_1.jsx)(Link, { className: "flex items-center text-xl font-bold tracking-tight text-zinc-950", href: brandHref, children: brandLogoSrc ? ((0, jsx_runtime_1.jsx)("img", { className: "h-10 w-auto object-contain", src: brandLogoSrc, alt: brandName })) : (brandName) }), (0, jsx_runtime_1.jsx)("nav", { "aria-label": navigationLabel, className: "hidden items-center gap-6 text-sm font-medium text-zinc-600 md:flex", children: navLinks.map((link) => ((0, jsx_runtime_1.jsx)(Link, { className: "transition-colors hover:text-zinc-950", href: link.href, children: link.label }, `${link.label}-${link.href}`))) }), (0, jsx_runtime_1.jsxs)("div", { className: "flex flex-1 items-center justify-end gap-3 sm:flex-none", children: [(0, jsx_runtime_1.jsxs)("label", { className: "hidden sm:block", children: [(0, jsx_runtime_1.jsx)("span", { className: "sr-only", children: searchLabel }), (0, jsx_runtime_1.jsx)("input", { className: "w-48 rounded-full border border-zinc-200 bg-zinc-50 px-4 py-2 text-sm outline-none placeholder:text-zinc-400 focus:border-zinc-400", placeholder: searchLabel, type: "search" })] }), (0, jsx_runtime_1.jsxs)(Link, { className: "rounded-full bg-zinc-950 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700", href: cartHref, children: [cartLabel, " ", (0, jsx_runtime_1.jsxs)("span", { className: "ml-1 text-zinc-300", children: ["(", cartCount, ")"] })] })] })] }) }));
+}

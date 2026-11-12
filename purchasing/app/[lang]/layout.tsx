@@ -3,9 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer, Header, type Locale } from "@hruday23/reusable";
-import { CartProvider } from "../components/cart-provider";
-import type en from "../messages/en.json";
-import "./globals.css";
+import { CartProvider } from "../../components/cart-provider";
+import type en from "../../messages/en.json";
+import "../globals.css";
 
 const locales = ["en", "te", "hi"] as const satisfies readonly Locale[];
 
@@ -17,6 +17,11 @@ function localePath(locale: Locale, path: string): string {
   return `/${locale}${path === "/" ? "" : path}`;
 }
 
+type LayoutProps = {
+  children: React.ReactNode;
+  params: Promise<{ lang: string }>;
+};
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,55 +32,54 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-type LayoutProps = {
-  children: React.ReactNode;
-  params: Promise<{ lang?: string }>;
-};
+export function generateStaticParams() {
+  return locales.map((lang) => ({ lang }));
+}
 
-export async function generateMetadata({
-  params,
-}: Pick<LayoutProps, "params">): Promise<Metadata> {
+export async function generateMetadata({ params }: Pick<LayoutProps, "params">): Promise<Metadata> {
   const { lang } = await params;
-  const locale: Locale = lang === undefined ? "en" : isLocale(lang) ? lang : notFound();
-  const messages: typeof en = (await import(`../messages/${locale}.json`)).default;
+  if (!isLocale(lang)) notFound();
+
+  const messages: typeof en = (await import(`../../messages/${lang}.json`)).default;
   return {
     title: messages.metadata.title,
     description: messages.metadata.description,
   };
 }
 
-export default async function RootLayout({ children, params }: LayoutProps) {
+export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { lang } = await params;
-  const locale: Locale = lang === undefined ? "en" : isLocale(lang) ? lang : notFound();
-  const messages: typeof en = (await import(`../messages/${locale}.json`)).default;
+  if (!isLocale(lang)) notFound();
+
+  const messages: typeof en = (await import(`../../messages/${lang}.json`)).default;
   const navLinks = messages.header.navLinks.map((link) => ({
     ...link,
-    href: localePath(locale, link.href),
+    href: localePath(lang, link.href),
   }));
   const footerColumns = messages.footer.columns.map((column) => ({
     ...column,
     links: column.links.map((link) => ({
       ...link,
-      href: localePath(locale, link.href),
+      href: localePath(lang, link.href),
     })),
   }));
   const legalLinks = messages.footer.legalLinks.map((link) => ({
     ...link,
-    href: localePath(locale, link.href),
+    href: localePath(lang, link.href),
   }));
 
   return (
     <html
-      lang={locale}
+      lang={lang}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <CartProvider>
           <Header
             brandName={messages.brandName}
-            brandHref={localePath(locale, "/")}
+            brandHref={localePath(lang, "/")}
             brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
-            cartHref={localePath(locale, "/cart")}
+            cartHref={localePath(lang, "/cart")}
             linkComponent={Link}
             navLinks={navLinks}
             navigationLabel={messages.header.navigationLabel}
@@ -85,7 +89,7 @@ export default async function RootLayout({ children, params }: LayoutProps) {
           {children}
           <Footer
             brandName={messages.brandName}
-            brandHref={localePath(locale, "/")}
+            brandHref={localePath(lang, "/")}
             brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
             description={messages.footer.description}
             columns={footerColumns}

@@ -58,7 +58,7 @@ export default function SareeCard({
         <p className="pt-1 text-lg font-bold text-zinc-950">{formattedPrice}</p>
         <div className="grid gap-3 pt-2 sm:grid-cols-2">
           <button
-            className="rounded-full border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-100"
+            className="cursor-pointer rounded-full border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-100"
             onClick={() => addItem(product)}
             type="button"
           >
