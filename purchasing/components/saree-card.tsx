@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { useCart } from "./cart-provider";
 
 export interface SareeCardProduct {
@@ -16,6 +17,7 @@ interface SareeCardProps {
   product: SareeCardProduct;
   locale: string;
   addToCartLabel: string;
+  addedToCartLabel: string;
   buyNowLabel: string;
 }
 
@@ -23,9 +25,11 @@ export default function SareeCard({
   product,
   locale,
   addToCartLabel,
+  addedToCartLabel,
   buyNowLabel,
 }: SareeCardProps) {
   const { addItem } = useCart();
+  const [wasAdded, setWasAdded] = useState(false);
   const formattedPrice = new Intl.NumberFormat(locale, {
     style: "currency",
     currency: "INR",
@@ -59,10 +63,13 @@ export default function SareeCard({
         <div className="grid gap-3 pt-2 sm:grid-cols-2">
           <button
             className="cursor-pointer rounded-full border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-100"
-            onClick={() => addItem(product)}
+            onClick={() => {
+              addItem(product);
+              setWasAdded(true);
+            }}
             type="button"
           >
-            {addToCartLabel}
+            {wasAdded ? addedToCartLabel : addToCartLabel}
           </button>
           <a
             className="rounded-full bg-green-700 px-4 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-green-800"

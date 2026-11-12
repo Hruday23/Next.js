@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Footer, Header, type Locale } from "@hruday23/reusable";
-import { CartProvider } from "../../components/cart-provider";
+import { Footer, type Locale } from "@hruday23/reusable";
+import CartHeader from "../../components/cart-header";
 import type en from "../../messages/en.json";
-import "../globals.css";
 
 const locales = ["en", "te", "hi"] as const satisfies readonly Locale[];
 
@@ -21,16 +19,6 @@ type LayoutProps = {
   children: React.ReactNode;
   params: Promise<{ lang: string }>;
 };
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -69,36 +57,28 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   }));
 
   return (
-    <html
-      lang={lang}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <CartProvider>
-          <Header
-            brandName={messages.brandName}
-            brandHref={localePath(lang, "/")}
-            brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
-            cartHref={localePath(lang, "/cart")}
-            linkComponent={Link}
-            navLinks={navLinks}
-            navigationLabel={messages.header.navigationLabel}
-            searchLabel={messages.header.searchLabel}
-            cartLabel={messages.header.cartLabel}
-          />
-          {children}
-          <Footer
-            brandName={messages.brandName}
-            brandHref={localePath(lang, "/")}
-            brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
-            description={messages.footer.description}
-            columns={footerColumns}
-            copyright={messages.footer.copyright}
-            legalLinks={legalLinks}
-            linkComponent={Link}
-          />
-        </CartProvider>
-      </body>
-    </html>
+    <div lang={lang} className="flex min-h-full flex-1 flex-col">
+      <CartHeader
+        brandName={messages.brandName}
+        brandHref={localePath(lang, "/")}
+        brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
+        cartHref={localePath(lang, "/cart")}
+        navLinks={navLinks}
+        navigationLabel={messages.header.navigationLabel}
+        searchLabel={messages.header.searchLabel}
+        cartLabel={messages.header.cartLabel}
+      />
+      {children}
+      <Footer
+        brandName={messages.brandName}
+        brandHref={localePath(lang, "/")}
+        brandLogoSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/Logo.jpeg`}
+        description={messages.footer.description}
+        columns={footerColumns}
+        copyright={messages.footer.copyright}
+        legalLinks={legalLinks}
+        linkComponent={Link}
+      />
+    </div>
   );
 }

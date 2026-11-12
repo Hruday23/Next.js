@@ -76,6 +76,7 @@ export default async function ShopPage({
               product={saree}
               locale={lang}
               addToCartLabel={messages.addToCart}
+              addedToCartLabel={messages.addedToCart}
               buyNowLabel={messages.buyNow}
             />
           ))}
