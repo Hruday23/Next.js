@@ -43,7 +43,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
       if (savedCart) {
         const parsed: unknown = JSON.parse(savedCart);
         if (Array.isArray(parsed) && parsed.every(isCartItem)) {
-          setItems(parsed);
+          setItems(parsed.map((item) => ({ ...item, quantity: 1 })));
         } else {
           window.localStorage.removeItem(storageKey);
         }
@@ -64,12 +64,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const addItem = useCallback((product: SareeCardProduct) => {
     setItems((currentItems) => {
-      const existing = currentItems.find((item) => item.id === product.id);
-      if (existing) {
-        return currentItems.map((item) =>
-          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item,
-        );
-      }
+      if (currentItems.some((item) => item.id === product.id)) return currentItems;
 
       return [...currentItems, { ...product, quantity: 1 }];
     });

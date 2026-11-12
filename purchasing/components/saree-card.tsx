@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
 import { useCart } from "./cart-provider";
 
 export interface SareeCardProduct {
@@ -28,8 +27,8 @@ export default function SareeCard({
   addedToCartLabel,
   buyNowLabel,
 }: SareeCardProps) {
-  const { addItem } = useCart();
-  const [wasAdded, setWasAdded] = useState(false);
+  const { items, addItem } = useCart();
+  const isInCart = items.some((item) => item.id === product.id);
   const formattedPrice = new Intl.NumberFormat(locale, {
     style: "currency",
     currency: "INR",
@@ -62,14 +61,12 @@ export default function SareeCard({
         <p className="pt-1 text-lg font-bold text-zinc-950">{formattedPrice}</p>
         <div className="grid gap-3 pt-2 sm:grid-cols-2">
           <button
-            className="cursor-pointer rounded-full border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-100"
-            onClick={() => {
-              addItem(product);
-              setWasAdded(true);
-            }}
+            className="cursor-pointer rounded-full border border-zinc-300 px-4 py-2.5 text-sm font-semibold text-zinc-900 transition-colors hover:bg-zinc-100 disabled:cursor-not-allowed disabled:bg-zinc-100 disabled:text-zinc-500"
+            disabled={isInCart}
+            onClick={() => addItem(product)}
             type="button"
           >
-            {wasAdded ? addedToCartLabel : addToCartLabel}
+            {isInCart ? addedToCartLabel : addToCartLabel}
           </button>
           <a
             className="rounded-full bg-green-700 px-4 py-2.5 text-center text-sm font-semibold text-white transition-colors hover:bg-green-800"
