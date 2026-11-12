@@ -1,6 +1,5 @@
-import HomeContent from "../components/home-content";
-import en from "../messages/en.json";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return <HomeContent messages={en.home} />;
+  redirect("/en/shop");
 }
