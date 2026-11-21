@@ -80,7 +80,7 @@ export default function Header({
             />
           </label>
           <Link
-            className="rounded-full bg-[#46372e] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5a4639]"
+            className="rounded-full bg-[#9b6848] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#805539]"
             href={cartHref}
           >
             {cartLabel} <span className="ml-1 text-[#d9c9bc]">({cartCount})</span>

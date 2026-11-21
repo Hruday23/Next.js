@@ -115,18 +115,19 @@
     "addedToCart": "कार्ट में जोड़ा गया",
     "buyNow": "अभी खरीदें"
   },
-  "home": {
-    "nextLogoAlt": "Next.js लोगो",
-    "titleBefore": "शुरू करने के लिए, इस फ़ाइल को संपादित करें:",
-    "titleCode": "page.tsx",
-    "titleAfter": "",
-    "introBefore": "शुरुआत करने के लिए सुझाव या अधिक जानकारी चाहिए? देखें",
-    "templates": "टेम्पलेट",
-    "introMiddle": "या",
-    "learning": "लर्निंग",
-    "introAfter": "केंद्र।",
-    "vercelLogoAlt": "Vercel चिह्न",
-    "deployNow": "अभी डिप्लॉय करें",
-    "documentation": "दस्तावेज़"
+  "homePage": {
+    "eyebrow": "कला का स्पर्श, दिल से बनी",
+    "title": "ऐसी साड़ी, मानो सिर्फ़ आपके लिए बनी हो।",
+    "description": "हाथ से रंगी और ब्लॉक प्रिंट की गई अनूठी साड़ियाँ खोजें—हर रंग, डिज़ाइन और बारीकी में प्यार और कारीगरी के साथ।",
+    "shopCta": "साड़ियाँ देखें",
+    "storyCta": "हमारी कहानी",
+    "detailOne": "छोटे बैच में हाथ-रंगाई",
+    "detailTwo": "हाथ से ब्लॉक प्रिंट",
+    "videoEyebrow": "हमारे YouTube स्टूडियो से",
+    "videoTitle": "हर साड़ी को करीब से देखें",
+    "channelCta": "हमारा YouTube चैनल देखें",
+    "craftEyebrow": "खूबसूरती, बनाने की कला में",
+    "exploreCta": "कलेक्शन देखें",
+    "closingEyebrow": "धीरे-धीरे बनी। हमेशा के लिए।"
   }
 }

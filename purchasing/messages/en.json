@@ -115,18 +115,19 @@
     "addedToCart": "Added to cart",
     "buyNow": "Buy now"
   },
-  "home": {
-    "nextLogoAlt": "Next.js logo",
-    "titleBefore": "To get started, edit the",
-    "titleCode": "page.tsx",
-    "titleAfter": "file.",
-    "introBefore": "Looking for a starting point or more instructions? Head over to",
-    "templates": "Templates",
-    "introMiddle": "or the",
-    "learning": "Learning",
-    "introAfter": "center.",
-    "vercelLogoAlt": "Vercel logomark",
-    "deployNow": "Deploy Now",
-    "documentation": "Documentation"
+  "homePage": {
+    "eyebrow": "A little art, a lot of heart",
+    "title": "A saree should feel like it was made just for you.",
+    "description": "Discover one-of-a-kind hand-dyed and hand-block-printed sarees, made with care in every color, pattern, and detail.",
+    "shopCta": "Explore sarees",
+    "storyCta": "Our story",
+    "detailOne": "Hand-dyed in small batches",
+    "detailTwo": "Printed by hand",
+    "videoEyebrow": "From our YouTube studio",
+    "videoTitle": "See every saree in motion",
+    "channelCta": "Visit our YouTube channel",
+    "craftEyebrow": "The beauty is in the making",
+    "exploreCta": "Explore the collection",
+    "closingEyebrow": "Made slowly. Worn forever."
   }
 }

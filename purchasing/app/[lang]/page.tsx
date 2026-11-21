@@ -24,5 +24,11 @@ export default async function LocalizedHome({
     ...link,
     href: `/${lang}${link.href === "/" ? "" : link.href}`,
   }));
-  return <HomeContent about={messages.about} navLinks={navLinks} />;
+  return (
+    <HomeContent
+      about={messages.about}
+      homePage={messages.homePage}
+      navLinks={navLinks}
+    />
+  );
 }
