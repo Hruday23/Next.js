@@ -4,6 +4,84 @@
     "title": "Bharathi Prints",
     "description": "Shop Bharathi Prints collections."
   },
+  "about": {
+    "pageTitle": "About Bharathi Prints",
+    "description": "Discover the hand-dyeing and block-printing craft behind Bharathi Prints sarees.",
+    "eyebrow": "Our story",
+    "title": "A saree as individual as the woman who wears it.",
+    "introduction": "At Bharathi Prints, we are dedicated saree manufacturers rooted in the timeless traditions of hand-dyeing and block printing. Every fabric begins as a blank canvas and evolves into a one-of-one wearable piece of art.",
+    "craftTitle": "Our craft: the art of one-of-one",
+    "craftIntroduction": "Unlike mass-produced textiles, no two creations at Bharathi Prints are ever identical. From selecting raw fabrics to mixing custom dye vats and hand-stamping intricate wooden blocks, we take complete creative ownership of our process.",
+    "craft": [
+      {
+        "title": "Bespoke hand-dyeing",
+        "description": "We dye our fabrics in small, carefully curated batches, experimenting with rich hues, earthy tones, and bespoke color combinations chosen in-house by our artisans."
+      },
+      {
+        "title": "Intricate block printing",
+        "description": "Using hand-carved wooden blocks, each motif is stamped by hand with precision and patience. Subtle variations in pressure and dye absorption are the hallmark of authentic craftsmanship, giving every saree a character machines can never replicate."
+      },
+      {
+        "title": "Truly one of a kind",
+        "description": "We design, dye, and print according to our own artistic instincts rather than rigid templates. Every saree that leaves our workshop is a singular edition; once a piece is draped, there is never another quite like it."
+      }
+    ],
+    "philosophyTitle": "Our philosophy",
+    "philosophy": "Fashion moves fast, but true craftsmanship endures. At Bharathi Prints, we honor slow, intentional manufacturing and celebrate the human touch behind every thread, color, and motif.",
+    "closingStatement": "When you choose a Bharathi Prints saree, you are not just buying a garment; you are owning an original piece of textile artistry made exclusively for you."
+  },
+  "contact": {
+    "pageTitle": "Contact Bharathi Prints",
+    "description": "Get personal help with saree availability, fabric videos, orders, and shipping from Bharathi Prints.",
+    "eyebrow": "We are here to help",
+    "title": "Let’s find your one-of-one drape.",
+    "introduction": "We’d love to hear from you! Because every Bharathi Prints saree is a one-of-one creation, pieces move quickly. We’re always happy to help you find the right drape, share close-up videos of available stock, or answer questions about our hand-dyed fabrics.",
+    "directTitle": "Get in touch directly",
+    "whatsappTitle": "WhatsApp & phone",
+    "phoneNumber": "+91 89191 00979",
+    "whatsappDescription": "Chat with us for instant availability checks, fabric details, and order inquiries.",
+    "businessHoursTitle": "Business hours",
+    "businessHours": "Monday–Saturday · 10:00 AM–7:00 PM IST",
+    "helpTitle": "How we can help",
+    "helpItems": [
+      {
+        "title": "Check saree availability",
+        "description": "Spotted a saree on our YouTube channel (@bharathiprints) or in our catalog? Send us its Product ID (for example, SR-1042) to check availability or reserve it before it’s gone."
+      },
+      {
+        "title": "Request fabric videos",
+        "description": "Want to see how a specific hand-dyed cotton drape looks in natural daylight? Reach out on WhatsApp and we’ll share a quick video."
+      },
+      {
+        "title": "Order & shipping support",
+        "description": "Need an update on a dispatched parcel or help with delivery anywhere in India? Message us with your order details."
+      }
+    ],
+    "connectTitle": "Connect with us",
+    "youtubeTitle": "YouTube",
+    "youtubeHandle": "@bharathiprints",
+    "youtubeDescription": "Watch our latest hand-block-printed releases and saree showcases.",
+    "locationTitle": "Workshop location",
+    "location": "Telangana, India",
+    "emailTitle": "Email",
+    "emailAddress": "bharathiprints40@gmail.com",
+    "formTitle": "Send us a message",
+    "formDescription": "Share a few details and we’ll get back to you. Your message will be sent to bharathiprints40@gmail.com.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "phoneLabel": "Phone number (optional)",
+    "phonePlaceholder": "+91",
+    "productIdLabel": "Product ID (optional)",
+    "productIdPlaceholder": "For example, SR-1042",
+    "messageLabel": "How can we help?",
+    "messagePlaceholder": "Tell us what you’re looking for...",
+    "submitLabel": "Send message",
+    "sendingLabel": "Sending...",
+    "successMessage": "Thank you! Your message has been sent. We’ll be in touch soon.",
+    "errorMessage": "We couldn’t send your message right now. Please try again or contact us on WhatsApp."
+  },
   "header": {
     "navigationLabel": "Main navigation",
     "searchLabel": "Search products",
@@ -11,7 +89,8 @@
     "navLinks": [
       { "label": "Shop", "href": "/shop" },
       { "label": "Collections", "href": "/" },
-      { "label": "About", "href": "/" }
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
     ]
   },
   "footer": {
@@ -39,7 +118,8 @@
         "links": [
           { "label": "Shipping", "href": "/shipping" },
           { "label": "Returns", "href": "/returns" },
-          { "label": "Support", "href": "/support" }
+          { "label": "Support", "href": "/support" },
+          { "label": "Contact", "href": "/contact" }
         ]
       }
     ],

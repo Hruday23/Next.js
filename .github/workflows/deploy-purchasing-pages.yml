@@ -60,6 +60,7 @@ jobs:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_BASE_PATH: /Next.js
           SAREE_API_URL: ${{ secrets.SAREE_API_URL }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.SAREE_API_URL }}
         run: npm run build
 
       - name: Upload Pages artifact

@@ -23,13 +23,15 @@ The shop and cart share this Next.js app and one dev server:
 - `/en/shop`, `/te/shop`, `/hi/shop`
 - `/en/cart`, `/te/cart`, `/hi/cart`
 
-The shop loads its products from the Express backend. Start the backend from `saree-backend` with `npm run dev`; it listens on port `5000` by default. To use a different backend address, set `SAREE_API_URL`, for example `http://localhost:5000`.
+The shop loads its products from the Express backend. Start the backend from `saree-backend` with `npm run dev`; it listens on port `5000` by default. Set `NEXT_PUBLIC_API_URL` to the backend base URL (for example, `http://localhost:5000`) when running the purchasing app locally.
+
+The localized About and Contact pages are available at `/en/about`, `/te/about`, `/hi/about` and `/en/contact`, `/te/contact`, `/hi/contact`. The contact form submits to the backend's `POST /api/contact` endpoint and emails inquiries to `bharathiprints40@gmail.com`. Configure `GMAIL_USER` and `GMAIL_APP_PASSWORD` in the backend hosting environment. Use a Gmail App Password for the sending account; do not put email credentials in the purchasing app or commit them to the repository.
 
 ## Deploy to GitHub Pages
 
 GitHub Pages hosts static files only. The purchasing app is exported as static pages by the GitHub Actions workflow in `.github/workflows/deploy-purchasing-pages.yml`; the shop fetches products at build time. Host `saree-backend` on a public Node.js service and add its base URL as the `SAREE_API_URL` repository Actions secret before deploying.
 
-In the GitHub repository, open **Settings → Pages**, choose **GitHub Actions** as the build and deployment source, and push to `main` or run the workflow manually. The project site is published under `/Next.js/`.
+In the GitHub repository, open **Settings → Pages**, choose **GitHub Actions** as the build and deployment source, and push to `main` or run the workflow manually. The project site is published under `/Next.js/`. The workflow passes the `SAREE_API_URL` repository secret to the static purchasing build so the shop and contact form can reach the deployed backend.
 
 The static export includes `/en/shop/`, `/te/shop/`, `/hi/shop/` and matching cart routes. Cart state is stored in each visitor's browser.
 
