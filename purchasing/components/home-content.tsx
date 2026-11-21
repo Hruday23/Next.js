@@ -1,70 +1,122 @@
-import Image from "next/image";
+import Link from "next/link";
 import type en from "../messages/en.json";
 
-export default function HomeContent({ messages }: { messages: typeof en.home }) {
+type HomeContentProps = {
+  about: typeof en.about;
+  navLinks: typeof en.header.navLinks;
+};
+
+export default function HomeContent({ about, navLinks }: HomeContentProps) {
+  const shopLink = navLinks.find((link) => link.href.endsWith("/shop"));
+  const aboutLink = navLinks.find((link) => link.href.endsWith("/about"));
+  const contactLink = navLinks.find((link) => link.href.endsWith("/contact"));
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt={messages.nextLogoAlt}
-          width={100}
-          height={20}
-          priority
+    <main className="flex-1 bg-[#fbf8f4] text-[#342a24]">
+      <section className="relative isolate overflow-hidden border-b border-[#e9dfd4]">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-36 -top-40 -z-10 h-[34rem] w-[34rem] rounded-full border border-[#e5d6c7] sm:right-[-8rem]"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            {messages.titleBefore}{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              {messages.titleCode}
-            </code>{" "}
-            {messages.titleAfter}
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            {messages.introBefore}{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              {messages.templates}
-            </a>{" "}
-            {messages.introMiddle}{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              {messages.learning}
-            </a>{" "}
-            {messages.introAfter}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 -top-24 -z-10 h-[27rem] w-[27rem] rounded-full border border-[#eee4da]"
+        />
+        <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-20">
+          <div className="max-w-3xl">
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.24em] text-[#9b6848]">
+              {about.eyebrow}
+            </p>
+            <h1 className="font-serif text-4xl leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+              {about.title}
+            </h1>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#6b5b50]">
+              {about.introduction}
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              {shopLink && (
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#46372e] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#5a4639]"
+                  href={shopLink.href}
+                >
+                  {shopLink.label}
+                </Link>
+              )}
+              {aboutLink && (
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#cbb19d] px-6 py-3 text-sm font-semibold text-[#46372e] transition-colors hover:bg-[#f6eee6]"
+                  href={aboutLink.href}
+                >
+                  {aboutLink.label}
+                </Link>
+              )}
+              {contactLink && (
+                <Link
+                  className="inline-flex min-h-12 items-center justify-center px-4 py-3 text-sm font-semibold text-[#9b6848] underline decoration-[#cbb19d] underline-offset-4 transition-colors hover:text-[#46372e]"
+                  href={contactLink.href}
+                >
+                  {contactLink.label}
+                </Link>
+              )}
+            </div>
+          </div>
+          <div
+            aria-hidden="true"
+            className="relative mx-auto flex aspect-[4/3] w-full max-w-md items-center justify-center overflow-hidden rounded-[48%_52%_42%_58%/46%_42%_58%_54%] bg-[#e8d9c9]"
+          >
+            <div className="absolute inset-5 rounded-[48%_52%_42%_58%/46%_42%_58%_54%] border border-[#f6eee6]/80" />
+            <div className="absolute inset-10 rounded-[48%_52%_42%_58%/46%_42%_58%_54%] border border-[#f6eee6]/70" />
+            <div className="absolute inset-16 rounded-[48%_52%_42%_58%/46%_42%_58%_54%] border border-[#f6eee6]/60" />
+            <div className="h-24 w-24 rotate-45 border border-[#9b6848]/60" />
+            <div className="absolute h-14 w-14 rotate-45 border border-[#9b6848]/50" />
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-6 py-20 sm:py-24">
+        <div className="max-w-3xl">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#9b6848]">
+            {about.eyebrow}
+          </p>
+          <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
+            {about.craftTitle}
+          </h2>
+          <p className="mt-5 text-base leading-7 text-[#6b5b50] sm:text-lg sm:leading-8">
+            {about.craftIntroduction}
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt={messages.vercelLogoAlt}
-              width={16}
-              height={14}
-            />
-            {messages.deployNow}
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {messages.documentation}
-          </a>
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {about.craft.map((craft, index) => (
+            <article
+              className="rounded-2xl border border-[#e9dfd4] bg-white/70 p-7 sm:p-8"
+              key={craft.title}
+            >
+              <p className="text-sm font-medium tracking-[0.16em] text-[#a8795b]">
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 className="mt-7 font-serif text-2xl leading-snug">{craft.title}</h3>
+              <p className="mt-4 leading-7 text-[#6b5b50]">{craft.description}</p>
+            </article>
+          ))}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="bg-[#46372e] text-[#fbf8f4]">
+        <div className="mx-auto w-full max-w-7xl px-6 py-16 sm:py-20">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#d9b79e]">
+              {about.eyebrow}
+            </p>
+            <h2 className="font-serif text-3xl leading-tight tracking-tight sm:text-4xl">
+              {about.philosophyTitle}
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-[#eee3d9]">{about.philosophy}</p>
+            <p className="mt-5 border-l border-[#d9b79e] pl-5 text-base leading-7 text-[#d9c9bc]">
+              {about.closingStatement}
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

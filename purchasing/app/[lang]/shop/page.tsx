@@ -64,10 +64,10 @@ export default async function ShopPage({
   ]);
 
   return (
-    <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-12">
-      <h1 className="mb-8 text-3xl font-semibold text-zinc-950">{messages.title}</h1>
+    <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-12 text-[#342a24]">
+      <h1 className="mb-8 font-serif text-3xl font-semibold text-[#342a24] sm:text-4xl">{messages.title}</h1>
       {sarees.length === 0 ? (
-        <p className="text-zinc-600">{messages.empty}</p>
+        <p className="rounded-2xl border border-[#e9dfd4] bg-white/70 p-6 text-[#6b5b50]">{messages.empty}</p>
       ) : (
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {sarees.map((saree) => (

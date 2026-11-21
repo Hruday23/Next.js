@@ -41,12 +41,12 @@ export default function Footer({
   linkComponent: Link = DefaultLink,
 }: FooterProps) {
   return (
-    <footer className="border-t border-zinc-200 bg-zinc-50">
+    <footer className="border-t border-[#e9dfd4] bg-[#f6eee6] text-[#342a24]">
       <div className="mx-auto max-w-7xl px-6 py-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Link
-              className="flex items-center text-xl font-bold tracking-tight text-zinc-950"
+              className="flex items-center text-xl font-bold tracking-tight text-[#342a24]"
               href={brandHref}
             >
               {brandLogoSrc ? (
@@ -55,7 +55,7 @@ export default function Footer({
                 brandName
               )}
             </Link>
-            <p className="mt-4 text-sm leading-6 text-zinc-600">
+            <p className="mt-4 text-sm leading-6 text-[#6b5b50]">
               {description}
             </p>
           </div>
@@ -63,13 +63,13 @@ export default function Footer({
           <div className="grid gap-8 sm:grid-cols-3">
             {columns.map((column) => (
               <div key={column.title}>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-zinc-950">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#46372e]">
                   {column.title}
                 </h3>
-                <ul className="mt-4 space-y-3 text-sm text-zinc-600">
+                <ul className="mt-4 space-y-3 text-sm text-[#6b5b50]">
                   {column.links.map((link) => (
                     <li key={`${column.title}-${link.label}`}>
-                      <Link className="transition-colors hover:text-zinc-950" href={link.href}>
+                      <Link className="transition-colors hover:text-[#9b6848]" href={link.href}>
                         {link.label}
                       </Link>
                     </li>
@@ -80,13 +80,13 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-zinc-200 pt-6 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-[#e9dfd4] pt-6 text-sm text-[#817166] sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {brandName}. {copyright}
           </p>
           <div className="flex items-center gap-4">
             {legalLinks.map((link) => (
-              <Link className="hover:text-zinc-950" href={link.href} key={link.href}>
+              <Link className="hover:text-[#9b6848]" href={link.href} key={link.href}>
                 {link.label}
               </Link>
             ))}

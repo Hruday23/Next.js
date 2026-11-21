@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import HomeContent from "../../components/home-content";
+import type en from "../../messages/en.json";
 
 const locales = ["en", "te", "hi"] as const;
 type Locale = (typeof locales)[number];
@@ -18,6 +19,10 @@ export default async function LocalizedHome({
   const { lang } = await params;
   if (!isLocale(lang)) notFound();
 
-  const messages = (await import(`../../messages/${lang}.json`)).default;
-  return <HomeContent messages={messages.home} />;
+  const messages: typeof en = (await import(`../../messages/${lang}.json`)).default;
+  const navLinks = messages.header.navLinks.map((link) => ({
+    ...link,
+    href: `/${lang}${link.href === "/" ? "" : link.href}`,
+  }));
+  return <HomeContent about={messages.about} navLinks={navLinks} />;
 }

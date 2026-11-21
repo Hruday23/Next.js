@@ -41,9 +41,9 @@ export default function CartContent({ locale, labels, shopHref }: CartContentPro
   if (items.length === 0) {
     return (
       <>
-        <p className="mt-3 text-zinc-600">{labels.empty}</p>
+        <p className="mt-3 text-[#6b5b50]">{labels.empty}</p>
         <Link
-          className="mt-6 inline-flex rounded-full bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-700"
+          className="mt-6 inline-flex rounded-full bg-[#46372e] px-5 py-3 text-sm font-semibold text-white hover:bg-[#5a4639]"
           href={shopHref}
         >
           {labels.continueShopping}
@@ -54,22 +54,22 @@ export default function CartContent({ locale, labels, shopHref }: CartContentPro
 
   return (
     <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_20rem]">
-      <ul className="divide-y divide-zinc-200">
+      <ul className="divide-y divide-[#e9dfd4]">
         {items.map((item) => (
           <li className="flex gap-4 py-5 first:pt-0" key={item.id}>
-            <div className="relative h-32 w-24 shrink-0 overflow-hidden rounded-lg bg-zinc-100">
+            <div className="relative h-32 w-24 shrink-0 overflow-hidden rounded-lg bg-[#e8d9c9]">
               <Image alt={item.name} className="object-cover" fill sizes="96px" src={item.image} />
             </div>
             <div className="flex flex-1 items-start justify-between gap-4">
               <div>
-                <h2 className="font-semibold text-zinc-950">{item.name}</h2>
-                <p className="mt-1 text-sm text-zinc-600">{item.category}</p>
-                <p className="mt-2 text-sm text-zinc-600">
+                <h2 className="font-serif font-semibold text-[#342a24]">{item.name}</h2>
+                <p className="mt-1 text-sm text-[#6b5b50]">{item.category}</p>
+                <p className="mt-2 text-sm text-[#6b5b50]">
                   {currency.format(item.price)} × {item.quantity}
                 </p>
               </div>
               <button
-                className="text-sm font-medium text-red-700 hover:text-red-900"
+                className="text-sm font-medium text-[#9b6848] underline decoration-[#cbb19d] underline-offset-4 hover:text-[#46372e]"
                 onClick={() => removeItem(item.id)}
                 type="button"
               >
@@ -80,19 +80,19 @@ export default function CartContent({ locale, labels, shopHref }: CartContentPro
         ))}
       </ul>
 
-      <aside className="h-fit rounded-xl border border-zinc-200 p-6">
-        <div className="flex justify-between gap-4 font-semibold text-zinc-950">
+      <aside className="h-fit rounded-2xl border border-[#e9dfd4] bg-white/70 p-6">
+        <div className="flex justify-between gap-4 font-semibold text-[#342a24]">
           <span>{labels.total}</span>
           <span>{currency.format(total)}</span>
         </div>
         <Link
-          className="mt-6 inline-flex w-full justify-center rounded-full bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-zinc-700"
+          className="mt-6 inline-flex w-full justify-center rounded-full bg-[#46372e] px-5 py-3 text-sm font-semibold text-white hover:bg-[#5a4639]"
           href={shopHref}
         >
           {labels.continueShopping}
         </Link>
         <a
-          className="mt-3 inline-flex w-full justify-center rounded-full bg-green-700 px-5 py-3 text-sm font-semibold text-white hover:bg-green-800"
+          className="mt-3 inline-flex w-full justify-center rounded-full bg-[#9b6848] px-5 py-3 text-sm font-semibold text-white hover:bg-[#805539]"
           href={whatsappUrl}
           rel="noopener noreferrer"
           target="_blank"
