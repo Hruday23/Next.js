@@ -96,37 +96,9 @@
   "footer": {
     "description": "మీ రోజువారీ శైలికి ప్రత్యేకంగా రూపొందించిన ప్రింట్లు మరియు డిజైన్‌లు.",
     "copyright": "అన్ని హక్కులు ప్రత్యేకించబడ్డాయి.",
-    "columns": [
-      {
-        "title": "షాప్",
-        "links": [
-          { "label": "కొత్తవి", "href": "/new-arrivals" },
-          { "label": "అత్యధికంగా అమ్ముడైనవి", "href": "/best-sellers" },
-          { "label": "యాక్సెసరీలు", "href": "/accessories" }
-        ]
-      },
-      {
-        "title": "మా గురించి",
-        "links": [
-          { "label": "మా కథ", "href": "/about" },
-          { "label": "జర్నల్", "href": "/journal" },
-          { "label": "సుస్థిరత", "href": "/sustainability" }
-        ]
-      },
-      {
-        "title": "కస్టమర్ సేవ",
-        "links": [
-          { "label": "షిప్పింగ్", "href": "/shipping" },
-          { "label": "రిటర్న్‌లు", "href": "/returns" },
-          { "label": "సహాయం", "href": "/support" },
-          { "label": "సంప్రదించండి", "href": "/contact" }
-        ]
-      }
-    ],
-    "legalLinks": [
-      { "label": "గోప్యత", "href": "/privacy-policy" },
-      { "label": "నిబంధనలు", "href": "/terms" }
-    ]
+    "quickLinksLabel": "మా గురించి మరియు సంప్రదింపు",
+    "columns": [],
+    "legalLinks": []
   },
   "cart": {
     "title": "మీ కార్ట్",

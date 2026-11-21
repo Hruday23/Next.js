@@ -89,44 +89,16 @@
     "navLinks": [
       { "label": "Shop", "href": "/shop" },
       { "label": "Collections", "href": "/" },
-      { "label": "About", "href": "/about" },
-      { "label": "Contact", "href": "/contact" }
+      { "label": "About Us", "href": "/about" },
+      { "label": "Contact Us", "href": "/contact" }
     ]
   },
   "footer": {
     "description": "Thoughtfully crafted prints and designs for your everyday style.",
     "copyright": "All rights reserved.",
-    "columns": [
-      {
-        "title": "Shop",
-        "links": [
-          { "label": "New Arrivals", "href": "/new-arrivals" },
-          { "label": "Best Sellers", "href": "/best-sellers" },
-          { "label": "Accessories", "href": "/accessories" }
-        ]
-      },
-      {
-        "title": "About",
-        "links": [
-          { "label": "Our Story", "href": "/about" },
-          { "label": "Journal", "href": "/journal" },
-          { "label": "Sustainability", "href": "/sustainability" }
-        ]
-      },
-      {
-        "title": "Customer Care",
-        "links": [
-          { "label": "Shipping", "href": "/shipping" },
-          { "label": "Returns", "href": "/returns" },
-          { "label": "Support", "href": "/support" },
-          { "label": "Contact", "href": "/contact" }
-        ]
-      }
-    ],
-    "legalLinks": [
-      { "label": "Privacy", "href": "/privacy-policy" },
-      { "label": "Terms", "href": "/terms" }
-    ]
+    "quickLinksLabel": "About & Contact",
+    "columns": [],
+    "legalLinks": []
   },
   "cart": {
     "title": "Your cart",

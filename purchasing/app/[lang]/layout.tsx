@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Footer, type Locale } from "@hruday23/reusable";
+import {
+  Footer,
+  type FooterColumn,
+  type FooterLink,
+  type Locale,
+} from "@hruday23/reusable";
 import CartHeader from "../../components/cart-header";
 import type en from "../../messages/en.json";
 
@@ -44,17 +49,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     ...link,
     href: localePath(lang, link.href),
   }));
-  const footerColumns = messages.footer.columns.map((column) => ({
-    ...column,
-    links: column.links.map((link) => ({
+  const footerLinks: FooterLink[] = messages.header.navLinks
+    .filter((link) => link.href === "/about" || link.href === "/contact")
+    .map((link) => ({
       ...link,
       href: localePath(lang, link.href),
-    })),
-  }));
-  const legalLinks = messages.footer.legalLinks.map((link) => ({
-    ...link,
-    href: localePath(lang, link.href),
-  }));
+    }));
+  const footerColumns: FooterColumn[] = [
+    { title: messages.footer.quickLinksLabel, links: footerLinks },
+  ];
+  const legalLinks: FooterLink[] = [];
 
   return (
     <div lang={lang} className="flex min-h-full flex-1 flex-col">
