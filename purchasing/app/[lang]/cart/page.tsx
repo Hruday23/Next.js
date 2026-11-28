@@ -18,8 +18,8 @@ export default async function CartPage({ params }: PageProps<"/[lang]/cart">) {
   const messages = (await import(`../../../messages/${lang}.json`)).default.cart;
 
   return (
-    <main className="mx-auto w-full max-w-7xl flex-1 px-6 py-12 text-[#342a24]">
-      <h1 className="font-serif text-3xl font-semibold text-[#342a24] sm:text-4xl">{messages.title}</h1>
+    <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-12 text-[#1F2022] sm:px-6 lg:px-8">
+      <h1 className="font-serif text-4xl font-semibold text-[#1F2022] sm:text-5xl">{messages.title}</h1>
       <CartContent
         locale={lang}
         labels={{

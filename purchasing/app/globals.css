@@ -2,25 +2,67 @@
 @source "../node_modules/@hruday23/reusable/dist";
 
 :root {
-  --background: #fbf8f4;
-  --foreground: #342a24;
-  --surface: #fffdfa;
-  --surface-muted: #f6eee6;
-  --border: #e9dfd4;
-  --accent: #9b6848;
-  --accent-dark: #46372e;
-  --text-muted: #6b5b50;
+  --background: #F5F0E8;
+  --foreground: #1F2022;
+  --surface: #FAF8F5;
+  --surface-muted: #EBE3D5;
+  --border: #D6CEC0;
+  --accent: #8C7A65;
+  --accent-dark: #6D5E4C;
+  --text-muted: #5E6064;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jakarta-sans);
+  --font-serif: var(--font-cormorant-garamond), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-jakarta-sans), Arial, Helvetica, sans-serif;
+}
+
+.linen-paper-canvas {
+  background-color: #F5F0E8;
+  background-image:
+    radial-gradient(rgba(31, 32, 34, 0.03) 1px, transparent 0),
+    radial-gradient(rgba(140, 122, 101, 0.04) 1px, #F5F0E8 0);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.handloom-weave-texture {
+  background-image:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(90deg, rgba(31, 32, 34, 0.04) 0, rgba(31, 32, 34, 0.04) 1px, transparent 1px, transparent 3px);
+}
+
+::selection {
+  background: #1F2022;
+  color: #FAF8F5;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EBE3D5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: #2D2F33;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8C7A65;
 }

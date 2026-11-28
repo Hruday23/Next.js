@@ -37,16 +37,16 @@ export default async function ContactPage({
   const whatsappHref = "https://wa.me/918919100979";
 
   return (
-    <main className="flex-1 bg-[#fbf8f4] text-[#342a24]">
-      <section className="border-b border-[#e9dfd4]">
+    <main className="flex-1 text-[#1F2022]">
+      <section className="border-b border-[#D6CEC0]">
         <div className="mx-auto w-full max-w-7xl px-6 py-16 sm:py-20">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#9b6848]">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.24em] text-[#6D5E4C]">
             {messages.eyebrow}
           </p>
           <h1 className="max-w-3xl font-serif text-4xl leading-tight tracking-tight sm:text-5xl">
             {messages.title}
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#6b5b50]">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-[#5E6064]">
             {messages.introduction}
           </p>
         </div>
@@ -59,25 +59,25 @@ export default async function ContactPage({
               {messages.directTitle}
             </h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <article className="rounded-2xl border border-[#e9dfd4] bg-white/70 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#8f6348]">
+              <article className="rounded-3xl border border-[#D6CEC0] bg-[#FAF8F5]/80 p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#1F2022]">
                   {messages.whatsappTitle}
                 </h3>
                 <a
-                  className="mt-3 inline-block text-lg font-medium underline decoration-[#cbb19d] underline-offset-4 hover:text-[#9b6848]"
+                  className="mt-3 inline-block text-lg font-medium underline decoration-[#8C7A65] underline-offset-4 hover:text-[#6D5E4C]"
                   href={whatsappHref}
                   rel="noreferrer"
                   target="_blank"
                 >
                   {messages.phoneNumber}
                 </a>
-                <p className="mt-3 leading-7 text-[#6b5b50]">{messages.whatsappDescription}</p>
+                <p className="mt-3 leading-7 text-[#5E6064]">{messages.whatsappDescription}</p>
               </article>
-              <article className="rounded-2xl border border-[#e9dfd4] bg-white/70 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#8f6348]">
+              <article className="rounded-3xl border border-[#D6CEC0] bg-[#FAF8F5]/80 p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#1F2022]">
                   {messages.businessHoursTitle}
                 </h3>
-                <p className="mt-3 leading-7 text-[#6b5b50]">{messages.businessHours}</p>
+                <p className="mt-3 leading-7 text-[#5E6064]">{messages.businessHours}</p>
               </article>
             </div>
           </section>
@@ -89,12 +89,12 @@ export default async function ContactPage({
             <div className="mt-5 space-y-5">
               {messages.helpItems.map((item, index) => (
                 <article className="flex gap-4" key={item.title}>
-                  <span className="pt-1 text-sm font-medium tracking-widest text-[#a8795b]">
+                  <span className="pt-1 text-sm font-medium tracking-widest text-[#6D5E4C]">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   <div>
                     <h3 className="font-semibold">{item.title}</h3>
-                    <p className="mt-1 leading-7 text-[#6b5b50]">{item.description}</p>
+                    <p className="mt-1 leading-7 text-[#5E6064]">{item.description}</p>
                   </div>
                 </article>
               ))}
@@ -106,30 +106,30 @@ export default async function ContactPage({
               {messages.connectTitle}
             </h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <article className="rounded-2xl border border-[#e9dfd4] bg-white/70 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#8f6348]">
+              <article className="rounded-3xl border border-[#D6CEC0] bg-[#FAF8F5]/80 p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#1F2022]">
                   {messages.youtubeTitle}
                 </h3>
                 <a
-                  className="mt-3 inline-block font-medium underline decoration-[#cbb19d] underline-offset-4 hover:text-[#9b6848]"
+                  className="mt-3 inline-block font-medium underline decoration-[#8C7A65] underline-offset-4 hover:text-[#6D5E4C]"
                   href="https://www.youtube.com/@bharathiprints"
                   rel="noreferrer"
                   target="_blank"
                 >
                   {messages.youtubeHandle}
                 </a>
-                <p className="mt-2 leading-7 text-[#6b5b50]">{messages.youtubeDescription}</p>
+                <p className="mt-2 leading-7 text-[#5E6064]">{messages.youtubeDescription}</p>
               </article>
-              <article className="rounded-2xl border border-[#e9dfd4] bg-white/70 p-6">
-                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#8f6348]">
+              <article className="rounded-3xl border border-[#D6CEC0] bg-[#FAF8F5]/80 p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-[#1F2022]">
                   {messages.locationTitle}
                 </h3>
-                <p className="mt-3 leading-7 text-[#6b5b50]">{messages.location}</p>
-                <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-[#8f6348]">
+                <p className="mt-3 leading-7 text-[#5E6064]">{messages.location}</p>
+                <h3 className="mt-5 text-sm font-semibold uppercase tracking-wide text-[#1F2022]">
                   {messages.emailTitle}
                 </h3>
                 <a
-                  className="mt-2 inline-block break-all underline decoration-[#cbb19d] underline-offset-4 hover:text-[#9b6848]"
+                  className="mt-2 inline-block break-all underline decoration-[#8C7A65] underline-offset-4 hover:text-[#6D5E4C]"
                   href={`mailto:${messages.emailAddress}`}
                 >
                   {messages.emailAddress}

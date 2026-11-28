@@ -88,7 +88,6 @@
     "cartLabel": "కార్ట్",
     "navLinks": [
       { "label": "షాప్", "href": "/shop" },
-      { "label": "కలెక్షన్‌లు", "href": "/" },
       { "label": "మా గురించి", "href": "/about" },
       { "label": "సంప్రదించండి", "href": "/contact" }
     ]

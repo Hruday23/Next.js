@@ -88,7 +88,6 @@
     "cartLabel": "कार्ट",
     "navLinks": [
       { "label": "शॉप", "href": "/shop" },
-      { "label": "कलेक्शन", "href": "/" },
       { "label": "हमारे बारे में", "href": "/about" },
       { "label": "संपर्क", "href": "/contact" }
     ]

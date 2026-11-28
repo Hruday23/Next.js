@@ -41,21 +41,21 @@ export default function Footer({
   linkComponent: Link = DefaultLink,
 }: FooterProps) {
   return (
-    <footer className="border-t border-[#e9dfd4] bg-[#f6eee6] text-[#342a24]">
-      <div className="mx-auto max-w-7xl px-6 py-10">
+    <footer className="border-t border-[#2D2F33] bg-[radial-gradient(circle_at_82%_18%,#2D2F33_0%,#1F2022_52%,#151618_100%)] text-[#F5F0E8]">
+      <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Link
-              className="flex items-center text-xl font-bold tracking-tight text-[#342a24]"
+              className="flex items-center text-xl font-bold tracking-tight text-[#FAF8F5]"
               href={brandHref}
             >
               {brandLogoSrc ? (
-                <img className="h-12 w-auto object-contain" src={brandLogoSrc} alt={brandName} />
+                <img className="h-12 w-auto rounded-lg object-contain" src={brandLogoSrc} alt={brandName} />
               ) : (
                 brandName
               )}
             </Link>
-            <p className="mt-4 text-sm leading-6 text-[#6b5b50]">
+            <p className="mt-4 text-sm leading-6 text-[#F5F0E8]/70">
               {description}
             </p>
           </div>
@@ -63,13 +63,13 @@ export default function Footer({
           <div className="grid gap-8 sm:grid-cols-3">
             {columns.map((column) => (
               <div key={column.title}>
-                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#46372e]">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#A89680]">
                   {column.title}
                 </h3>
-                <ul className="mt-4 space-y-3 text-sm text-[#6b5b50]">
+                <ul className="mt-4 space-y-3 text-sm text-[#F5F0E8]/75">
                   {column.links.map((link) => (
                     <li key={`${column.title}-${link.label}`}>
-                      <Link className="transition-colors hover:text-[#9b6848]" href={link.href}>
+                      <Link className="transition-colors hover:text-white" href={link.href}>
                         {link.label}
                       </Link>
                     </li>
@@ -80,13 +80,13 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-2 border-t border-[#e9dfd4] pt-6 text-sm text-[#817166] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-white/15 pt-6 text-sm text-[#F5F0E8]/55 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {brandName}. {copyright}
           </p>
           <div className="flex items-center gap-4">
             {legalLinks.map((link) => (
-              <Link className="hover:text-[#9b6848]" href={link.href} key={link.href}>
+              <Link className="hover:text-white" href={link.href} key={link.href}>
                 {link.label}
               </Link>
             ))}

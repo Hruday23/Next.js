@@ -49,21 +49,21 @@ export default function ContactForm({
   }
 
   const inputClassName =
-    "mt-2 w-full rounded-xl border border-[#e2d7cc] bg-white px-4 py-3 text-[#342a24] outline-none transition focus:border-[#9b6848] focus:ring-2 focus:ring-[#9b6848]/15";
+    "mt-2 w-full rounded-xl border border-[#D6CEC0] bg-[#FAF8F5] px-4 py-3 text-[#1F2022] outline-none transition focus:border-[#8C7A65] focus:ring-2 focus:ring-[#8C7A65]/20";
 
   return (
     <section
       aria-labelledby="contact-form-title"
-      className="h-fit rounded-3xl border border-[#e9dfd4] bg-white p-6 shadow-[0_16px_50px_-36px_rgba(52,42,36,0.35)] sm:p-8"
+      className="h-fit rounded-3xl border border-[#D6CEC0] bg-[#FAF8F5] p-6 shadow-[0_22px_48px_-30px_rgba(31,32,34,0.2)] sm:p-8"
     >
       <h2 id="contact-form-title" className="font-serif text-3xl">
         {messages.formTitle}
       </h2>
-      <p className="mt-3 leading-7 text-[#6b5b50]">{messages.formDescription}</p>
+      <p className="mt-3 leading-7 text-[#5E6064]">{messages.formDescription}</p>
 
       <form className="mt-7 space-y-5" onSubmit={handleSubmit}>
         <div className="grid gap-5 sm:grid-cols-2">
-          <label className="block text-sm font-medium text-[#51443b]">
+          <label className="block text-sm font-medium text-[#1F2022]">
             {messages.nameLabel}
             <input
               autoComplete="name"
@@ -74,7 +74,7 @@ export default function ContactForm({
               required
             />
           </label>
-          <label className="block text-sm font-medium text-[#51443b]">
+          <label className="block text-sm font-medium text-[#1F2022]">
             {messages.emailLabel}
             <input
               autoComplete="email"
@@ -89,7 +89,7 @@ export default function ContactForm({
         </div>
 
         <div className="grid gap-5 sm:grid-cols-2">
-          <label className="block text-sm font-medium text-[#51443b]">
+          <label className="block text-sm font-medium text-[#1F2022]">
             {messages.phoneLabel}
             <input
               autoComplete="tel"
@@ -100,7 +100,7 @@ export default function ContactForm({
               type="tel"
             />
           </label>
-          <label className="block text-sm font-medium text-[#51443b]">
+          <label className="block text-sm font-medium text-[#1F2022]">
             {messages.productIdLabel}
             <input
               className={inputClassName}
@@ -111,7 +111,7 @@ export default function ContactForm({
           </label>
         </div>
 
-        <label className="block text-sm font-medium text-[#51443b]">
+        <label className="block text-sm font-medium text-[#1F2022]">
           {messages.messageLabel}
           <textarea
             className={`${inputClassName} min-h-36 resize-y`}
@@ -133,7 +133,7 @@ export default function ContactForm({
         )}
 
         <button
-          className="w-full rounded-full bg-[#46372e] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#5a4639] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+          className="w-full rounded-full bg-[#1F2022] px-6 py-3.5 text-sm font-semibold text-[#F5F0E8] transition hover:bg-[#2D2F33] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           disabled={isSending}
           type="submit"
         >
